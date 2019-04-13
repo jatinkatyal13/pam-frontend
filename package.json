@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "description": "Small description for pam-frontend goes here",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jatinkatyal13/pam-frontend.git"
+  },
   "license": "MIT",
   "author": "",
   "directories": {
-    "doc": "doc",
     "test": "tests"
   },
   "scripts": {
@@ -50,5 +52,13 @@
   },
   "engines": {
     "node": "6.* || 8.* || >= 10.*"
+  },
+  "main": ".eslintrc.js",
+  "bugs": {
+    "url": "https://github.com/jatinkatyal13/pam-frontend/issues"
+  },
+  "homepage": "https://github.com/jatinkatyal13/pam-frontend#readme",
+  "dependencies": {
+    "hbs": "^4.0.3"
   }
 }
