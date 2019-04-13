@@ -5,7 +5,11 @@
         <h6 class="text-primary font-weight-bold">Video Stream</h6>
       </div>
       <div class="card-body">
-        <p>Some Video Stream</p>
+        {{#ember-webcam
+          didSnap=(action 'didSnap')
+          didError=(action 'didError')
+          as |camera|}}
+        {{/ember-webcam}}
       </div>
     </div>
   </div>
