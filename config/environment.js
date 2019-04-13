@@ -5,6 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'pam-frontend',
     podModulePrefix: 'pam-frontend/pods',
     environment,
+    apiHost: 'http://localhost:8000',
     rootURL: '/',
     locationType: 'auto',
     EmberENV: {
