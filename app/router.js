@@ -8,8 +8,9 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('patient', function() {
-    this.route('object', {path: 'patient/:id'});
+    this.route('id', {path: '/:id'});
   });
+  this.route('404', {path: '/*'});
 });
 
 export default Router;

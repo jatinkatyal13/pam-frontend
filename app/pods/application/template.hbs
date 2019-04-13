@@ -1,5 +1,22 @@
-{{hea-der}}
+<div id="wrapper">
+  <!-- Sidebar -->
+  {{side-bar}}
+  <!-- End of Sidebar -->
 
-{{outlet}}
+  <div id="content-wrapper" class="d-flex flex-column">
 
-{{foo-ter}}
+    <!-- Main Content -->
+    <div id="content">
+
+      <!-- Topbar -->
+      {{nav-bar}}
+
+      <div class="container-fluid">
+        {{outlet}}
+      </div>
+
+    </div>
+    {{foo-ter}}
+  </div>
+</div>
+    
