@@ -2,24 +2,14 @@ import Component from '@ember/component';
 
 export default Component.extend({
   dataUri: '',
-  textSentimentData: [
-    {
-      label: "sad",
-      value: 100
-    },
-    {
-      label: "something",
-      value: 100
-    },
-    {
-      label: "something",
-      value: 100
-    },
-    {
-      label: "happy",
-      value: 100
-    }
-  ],
+  textSentimentData: {
+    labels: ['Sad', 'Happy', 'Fear'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3],
+      borderWidth: 1
+    }]
+  },
   actions: {
     didSnap(dataUri) {
       // Delivers a data URI when snapshot is taken.

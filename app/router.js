@@ -10,8 +10,8 @@ Router.map(function() {
   this.route('patient', function() {
     this.route('id', {path: '/:id'});
   });
-  this.route('404', {path: '/*'});
   this.route('initiate');
+  this.route('404', {path: '/*'});
 });
 
 export default Router;

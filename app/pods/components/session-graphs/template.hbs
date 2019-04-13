@@ -12,12 +12,12 @@
   </div>
   <div class="col-sm-4">
     {{#shadow-card title="Textual Emotion Analysis"}}
-      <p>something</p>
+      {{ember-chart type='bar' data=textSentimentData width=200 height=100}}
     {{/shadow-card}}
   </div>
   <div class="col-sm-4">
     {{#shadow-card title="Visual Emotion Analysis"}}
-      <p>something</p>
+      {{ember-chart type='bar' data=textSentimentData width=200 height=100}}
     {{/shadow-card}}
   </div>
 </div>
@@ -29,8 +29,7 @@
   </div>
   <div class="col-sm-6">
     {{#shadow-card title="Text Sentiment Analysis"}}
-      {{#vertical-bar-chart data=textSentimentData height=200}}
-      {{/vertical-bar-chart}}
+      {{ember-chart type='line' data=textSentimentData width=200 height=100}}
     {{/shadow-card}}
   </div>
 </div>
