@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-sm-6">
+    <form>
+      <div class="form-group">
+        <label>Patient Name</label>
+        {{#power-select
+          class="form-control"
+          searchField="name"
+          options=patients
+          selected=selectedPatient
+          onchange=(action (mut selectedPatient))
+          as |patient|
+        }}
+          {{patient.name}}
+        {{/power-select}}
+      </div>
+    </form>
+  </div>
+  <div class="col-sm-3">
+
+  </div>
+  <div class="col-sm-3 d-flex align-items-center justify-content-center">
+    <button class="btn btn-info">
+      <span class="text">Start</span>
+    </button>
+    <button class="btn btn-danger">
+      <span class="text">Stop</span>
+    </button>
+  </div>
+</div>

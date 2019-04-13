@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('id', {path: '/:id'});
   });
   this.route('404', {path: '/*'});
+  this.route('initiate');
 });
 
 export default Router;
