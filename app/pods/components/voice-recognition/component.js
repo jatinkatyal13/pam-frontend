@@ -4,19 +4,25 @@ export default Component.extend({
   enabled: false, // whether recognition is enabled
   speechRecognition: null, // the instance of webkitSpeechRecognition
   language: 'en', // language to recognise
-  startRecognition: function() {
-    // prefixed SpeechRecognition object because it only works in Chrome
-    var speechRecognition = new webkitSpeechRecognition();
+  speechRecognition: null,
+  init() {
+    this._super(...arguments)
+    this.speechRecognition = new webkitSpeechRecognition();
     // not continuous to avoid delays
-    speechRecognition.continuous = true;
+    this.speechRecognition.continuous = true;
     // only the final result
-    speechRecognition.interimResults = false;
+    this.speechRecognition.interimResults = false;
     // binding various handlers
-    speechRecognition.onresult = Ember.run.bind(this, this.onRecoginitionResult);
-    speechRecognition.onerror = Ember.run.bind(this, this.onRecognitionError);
-    speechRecognition.onend = Ember.run.bind(this, this.onRecognitionEnd);
+    this.speechRecognition.onresult = Ember.run.bind(this, this.onRecoginitionResult);
+    this.speechRecognition.onerror = Ember.run.bind(this, this.onRecognitionError);
+    this.speechRecognition.onend = Ember.run.bind(this, this.onRecognitionEnd);
+  },
+  startRecognition() {
     // starting the recognition
-    speechRecognition.start();
+    this.speechRecognition.start();
+  },
+  stopRecognition() {
+    this.speechRecognition.stop();
   },
   onRecognitionEnd: function() {
     console.log("ended")
@@ -41,6 +47,8 @@ export default Component.extend({
   onEnabledChange: function() {
     if (this.get('enabled')) {
       this.startRecognition();
+    } else {
+      this.stopRecognition();
     }
   }.observes('enabled'),
 });

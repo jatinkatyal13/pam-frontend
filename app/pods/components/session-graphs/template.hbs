@@ -1,4 +1,4 @@
-{{#voice-recognition onResult='getResult' enabled=sessionRunning}}{{/voice-recognition}}
+{{#voice-recognition onResult='onResult' enabled=sessionRunning}}{{/voice-recognition}}
 <div class="row">
   <div class="col-sm-4">
     {{#shadow-card title="Video Stream"}}
@@ -26,6 +26,7 @@
 <div class="row">
   <div class="col-sm-6">
     {{#shadow-card title="Text Stream"}}
+      {{ember-chat messages=messages}}
     {{/shadow-card}}
   </div>
   <div class="col-sm-6">

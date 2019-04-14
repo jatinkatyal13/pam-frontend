@@ -2,6 +2,7 @@ import Component from '@ember/component';
 
 export default Component.extend({
   dataUri: '',
+  messages: [],
   textSentimentData: {
     labels: ['Sad', 'Happy', 'Fear'],
     datasets: [{
@@ -11,6 +12,10 @@ export default Component.extend({
     }]
   },
   actions: {
+    onResult(result) {
+      this.get('messages').pushObject(result)
+      console.log(result)
+    },
     didSnap(dataUri) {
       // Delivers a data URI when snapshot is taken.
       this.set('dataUri', dataUri);
@@ -18,9 +23,6 @@ export default Component.extend({
     didError(error) {
       // Fires when a WebcamError occurs.
       console.error(error);
-    },
-    getResult(result) {
-      console.log(result)
     }
   }
 });
