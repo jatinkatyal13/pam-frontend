@@ -13,7 +13,7 @@
   </div>
   <div class="col-sm-4">
     {{#shadow-card title="Textual Emotion Analysis"}}
-      {{ember-chart type='bar' data=textSentimentData width=200 height=100}}
+      {{ember-chart type='bar' data=textEmotionData width=200 height=100}}
     {{/shadow-card}}
   </div>
   <div class="col-sm-4">
@@ -26,7 +26,7 @@
 <div class="row">
   <div class="col-sm-6">
     {{#shadow-card title="Text Stream"}}
-      {{ember-chat messages=messages}}
+      {{ember-chat messages=messagesAsChat}}
     {{/shadow-card}}
   </div>
   <div class="col-sm-6">
