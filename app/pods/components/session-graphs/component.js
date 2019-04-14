@@ -18,6 +18,9 @@ export default Component.extend({
     didError(error) {
       // Fires when a WebcamError occurs.
       console.error(error);
+    },
+    getResult(result) {
+      console.log(result)
     }
   }
 });

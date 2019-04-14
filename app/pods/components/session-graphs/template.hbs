@@ -1,7 +1,8 @@
+{{#voice-recognition onResult='getResult' enabled=sessionRunning}}{{/voice-recognition}}
 <div class="row">
   <div class="col-sm-4">
-    {{#shadow-card title="Videdo Stream"}}
-      {{#if showWebcam}}
+    {{#shadow-card title="Video Stream"}}
+      {{#if sessionRunning}}
         {{#ember-webcam
           didSnap=(action 'didSnap')
           didError=(action 'didError')
